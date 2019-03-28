@@ -1,0 +1,8 @@
+<!--pages/wdxx/wdxx.wxml-->
+<view class="nr1"></view>
+<view class="nr2">
+   <text class="zi1">我的信息</text>
+   <text class="zi2" wx:if="{{team!=null}}">战队名:{{team}}</text>
+   <text class="zi2" wx:else>战队名:{{sname}}</text>
+   <text class="zi2">手机号:{{tel}}</text>
+</view>

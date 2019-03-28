@@ -1,0 +1,26 @@
+/* pages/zdzj/zdzj.wxss */
+.nr3{float:left;width:680rpx;margin-left:35rpx;border-radius:10rpx;margin-top:-100rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr1{float:left;width:680rpx;background:#d68ce5;color:#000;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr2{background:#fff;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr2-1{background:#fff;line-height:100rpx;border-top-left-radius: 10rpx;border-top-right-radius: 10rpx;}
+.nr1 .zi1{float:left;width:90rpx;text-align:center;font-size:28rpx;line-height:68rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr1 .zi2{float:left;width:180rpx;text-align:center;font-size:28rpx;line-height:68rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr1 .zi3{float:left;width:140rpx;text-align:center;font-size:28rpx;line-height:68rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr1 .zi4{font-size:33rpx;line-height:100rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
+.nr4{float:lefe;width:750rpx;background:#af1ace;height:200rpx;  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}

@@ -1,0 +1,57 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/grzx/grzx",
+    "pages/shouyi/shouyi",
+    "pages/yxb/yxb",
+    "pages/zdzj/zdzj",
+    "pages/welcome/welcome",
+    "pages/my_team/my_team",
+    "pages/zc/zc",
+    "pages/cwtz/cwtz",
+    "pages/hdgz/hdgz",
+    "pages/djhl/djhl",
+    "pages/tzgz/tzgz",
+    "pages/wdxx/wdxx",
+    "pages/my_card/my_card",
+    "pages/sy_xq/sy_xq"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "要你美",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#d68ce5",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/shouye-2.png",
+        "iconPath": "images/shouye.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/paihangbang-2.png",
+        "iconPath": "images/paihangbang.png",
+        "pagePath": "pages/yxb/yxb",
+        "text": "美颜榜"
+      },
+      {
+        "selectedIconPath": "images/paixingbang-2.png",
+        "iconPath": "images/paixingbang.png",
+        "pagePath": "pages/zdzj/zdzj",
+        "text": "战队战绩"
+      },
+      {
+        "selectedIconPath": "images/gerenzhongxin-2.png",
+        "iconPath": "images/gerenzhongxin.png",
+        "pagePath": "pages/grzx/grzx",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

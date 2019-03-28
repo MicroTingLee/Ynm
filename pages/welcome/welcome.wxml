@@ -1,0 +1,13 @@
+<!--pages/denglu/welcome.wxml-->
+<form report-submit bindsubmit="formSubmit">
+<image src="../../images/zhandui.png" class="nr1"></image>
+<text class="nr2">要你美</text>
+<view class="nr3">
+   <button class="nr3-2"  wx:if="{{xs1==1}}"  open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber" formType="submit">授权手机号</button>
+   <button class="nr3-2" wx:else style='background:#f1f1f1' formType="submit">授权手机号</button>
+  <text class="nr3-3">授权手机号后请点击登录，如果您没有用这个手机号注册过，我们将为您创建账号。</text>
+</view>
+<button class="nr4" wx:if="{{xs==1}}" bindgetuserinfo="getUserInfo" open-type="getUserInfo" data-type='getUserInfo' formType="submit" lang='zh_CN'>登录</button>
+<button class="nr4"  wx:else style='background:#f1f1f1'>登录</button>
+<!-- <button class="nr5" bindtap="goIndex" data-type='openParam' formType="submit">返回首页</button> -->
+</form>

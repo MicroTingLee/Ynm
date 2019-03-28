@@ -1,0 +1,8 @@
+<!--pages/sy_xq/sy_xq.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="nr1" wx:if="{{show==2}}">
+<template is="wxParse" class="bisainrzi" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class="nr1" wx:else>
+暂无
+</view>

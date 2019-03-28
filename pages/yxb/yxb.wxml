@@ -1,0 +1,34 @@
+<!--pages/yxb/yxb.wxml-->
+<view class="nr4"></view>
+<view class="nr3">
+  <view class="nr1 nr2-1">
+    <text class="zi1 zi3">排名</text>
+    <text class="zi2 zi3">手机号</text>
+    <text class="zi2 zi3">姓名</text>
+    <text class="zi2 zi3">美颜值</text>
+  </view>
+    <view class="nr1"  wx:if="{{user}}" style="background:linear-gradient(to right, #996699, #ff0033);">
+    <text class="zi1">{{paimin}}</text>
+    <text class="zi2">{{user.tel}}</text>
+    <text class="zi2">{{user.wechaname}}</text>
+    <text class="zi2">{{user.exp}}</text>
+  </view>
+  <view class="{{key%2==0? 'nr1' : 'nr1 nr2'}}"  wx:for="{{heros}}" wx:for-index="key" wx:for-item="v" >
+    <text class="zi1">{{key+1}}</text>
+    <text class="zi2">{{v.tel}}</text>
+    <text class="zi2">{{v.wechaname}}</text>
+    <text class="zi2">{{v.exp}}</text>
+  </view>
+  <!-- <view class="nr1">
+    <text class="zi1">3</text>
+    <text class="zi2">136****4423</text>
+    <text class="zi2">童*洋</text>
+    <text class="zi2">14390</text>
+  </view>
+  <view class="nr1 nr2">
+    <text class="zi1">4</text>
+    <text class="zi2">136****4423</text>
+    <text class="zi2">童*洋</text>
+    <text class="zi2">14390</text>
+  </view> -->
+</view>

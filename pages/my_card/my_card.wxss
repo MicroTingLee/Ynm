@@ -1,0 +1,9 @@
+/* pages/my_card/my_card.wxss */
+.nr6{float:left;width:750rpx;}
+.nr5{float:left;margin-top:20rpx;width:750rpx;box-shadow:0rpx 3rpx 5rpx #f1f1f1;border-top:1rpx solid #f1f1f1;border-bottom:1rpx solid #f1f1f1;}
+.nr5 .img1{float:left;width:60rpx;height:60rpx;margin:20rpx 30rpx;}
+.nr5 .zi1{float:left;color:#838383;font-size:30rpx;line-height:60rpx;margin:20rpx 0rpx;}
+.nr5 .zi2{float:right;color:#838383;font-size:30rpx;line-height:60rpx;margin:20rpx 0rpx;margin-right:30rpx}
+.nr1{float:left;width:750rpx;border-bottom:1rpx solid #f1f1f1;}
+.nr1-1{float:left;width:187.5rpx;text-align:center;font-size:35rpx;line-height:80rpx;color:#8a8a8a;border-bottom:4rpx solid #fff;}
+.nr1-2{border-bottom:4rpx solid #ad19cd;color:#ad19cd}

@@ -1,0 +1,4 @@
+/* pages/sy_xq/sy_xq.wxss */
+.nr1{float:left;width:730rpx;margin-left:10rpx;}
+.bisainrzi{float:left;width:96%;margin-left:2%;margin-bottom:2%;color:#000000;font-size:3vw;line-height:140%;text-indent:2em;}
+

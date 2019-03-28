@@ -1,0 +1,24 @@
+/* pages/shouyi/shouyi.wxss */
+.nr1{float:left;width:750rpx;border-bottom:1rpx solid #f1f1f1;}
+.nr1-1{float:left;width:250rpx;text-align:center;font-size:35rpx;line-height:80rpx;color:#8a8a8a;border-bottom:4rpx solid #fff;}
+.nr1-2{border-bottom:4rpx solid #ad19cd;color:#ad19cd}
+.nr2{float:left;width:750rpx;background:#ad19cd;height:350rpx;}
+.nr2 .zi1{float:left;width:750rpx;text-align:center;font-size:30rpx;color:#fff;margin-top:100rpx;}
+.nr2 .zi2{float:left;width:750rpx;text-align:center;font-size:50rpx;color:#fff;margin-top:10rpx;font-weight:bold;}
+.nr3{background:#c55fdc;float:left;width:750rpx;height:100rpx;}
+.nr4{float:left;width:250rpx;height:70rpx;padding:15rpx 0rpx;}
+.nr4 .zi1{float:left;width:250rpx;text-align:center;font-size:28rpx;line-height:35rpx;color:#fff;}
+.nr6{float:left;width:750rpx;}
+.nr5{float:left;margin-top:20rpx;width:750rpx;box-shadow:0rpx 3rpx 5rpx #f1f1f1;border-top:1rpx solid #f1f1f1;border-bottom:1rpx solid #f1f1f1;}
+.nr5 .img1{float:left;width:60rpx;height:60rpx;margin:20rpx 30rpx;}
+.nr5 .zi1{float:left;color:#838383;font-size:30rpx;line-height:60rpx;margin:20rpx 0rpx;}
+.nr5 .zi2{float:right;color:#838383;font-size:30rpx;line-height:60rpx;margin:20rpx 0rpx;margin-right:30rpx}
+
+
+.indexnr1 { float: left; width: 90vw; margin-left: 3vw; margin-top: 4vw; padding: 3vw 2vw; background: #fff; border-radius: 2vw; box-shadow: 1px 1px 6px #888888; }
+.indexnr1 .quyu1 { float: right; background: #ad19cd; color: #fff; text-align: center; border-radius: 25vw; padding: 2vw; }
+.indexnr1 .quyu1 .zi1 { float: left; width: 8vw; line-height: 8vw; border: 0.5vw solid #ad19cd; background: #c55fdc; color: #fff; border-radius: 25vw; font-size: 4vw; font-weight: bold }
+.indexnr1 .quyu2 { float: left; width: 70vw; }
+.indexnr1 .quyu2 .zi1 { float: left; width: 70vw; font-size: 4vw; color: #000; }
+.indexnr1 .quyu2 .zi2 { float: left; width: 70vw; font-size: 3.5vw; color: #999; margin-top: 2vw }
+.indexnr1 .quyu2 .zi2 .span2 { margin-left: 2.5vw; }

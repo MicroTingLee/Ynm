@@ -1,0 +1,5 @@
+/* pages/tzgz/tzgz.wxss */
+.nr1{width:100%;}
+.nr2{width:100%;}
+.nr3{float:left;width:480rpx;height:90rpx;line-height:90rpx;font-size:30rpx;text-align:center;color:#fff;background:#af1ace;margin-left:135rpx;margin-top:40rpx;border-radius:25rpx;}
+.nr4{float:left;width:700rpx;height:300rpx;line-height:40rpx;font-size:30rpx;color:#fff;background:#e1e1e1;margin-left:25rpx;margin-top:40rpx;border-radius:25rpx;word-wrap: break-word;word-break: break-all;overflow: hidden;}

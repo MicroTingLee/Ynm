@@ -1,0 +1,10 @@
+/* pages/my_team/my_team.wxss */
+.nr3{float:left;width:680rpx;margin-left:35rpx;border-radius:10rpx;margin-top:-100rpx;}
+.nr1{float:left;width:680rpx;background:#d68ce5;color:#000;}
+.nr2{background:#fff}
+.nr2-1{background:#fff;line-height:100rpx;border-top-left-radius: 10rpx;border-top-right-radius: 10rpx;}
+.nr1 .zi1{float:left;width:90rpx;text-align:center;font-size:28rpx;line-height:68rpx;}
+.nr1 .zi2{float:left;width:180rpx;text-align:center;font-size:28rpx;line-height:68rpx;}
+.nr1 .zi3{float:left;width:140rpx;text-align:center;font-size:28rpx;line-height:68rpx;}
+.nr1 .zi4{font-size:33rpx;line-height:100rpx;}
+.nr4{float:lefe;width:750rpx;background:#af1ace;height:200rpx;}

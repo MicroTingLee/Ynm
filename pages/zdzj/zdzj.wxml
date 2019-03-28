@@ -1,0 +1,40 @@
+<!--pages/zdzj/zdzj.wxml-->
+<view class="nr4"></view>
+<view class="nr3">
+  <view class="nr1 nr2-1">
+    <text class="zi1 zi4">排名</text>
+    <text class="zi2 zi4">战队名</text>
+    <text class="zi3 zi4">队长</text>
+    <text class="zi2 zi4">美颜值</text>
+    <text class="zi1 zi4">人数</text>
+  </view>
+  <view class="nr1" wx:if="{{user}}"  style="background:linear-gradient(to right, #996699, #ff0033);">
+    <text class="zi1" wx:if="{{user.team}}">{{user.user_num}}</text>
+    <text class="zi1" wx:else>无</text>
+     <view  wx:if="{{user.team}}"  class="zi2">
+        <image src="../../images/hb.png" style="width:64rpx;height:48rpx;float:left" wx:if="{{user.allcount>=user.yq_num}}"> </image>
+        <text>{{user.team}}</text>
+     </view>
+    <text class="zi2" wx:else>暂无</text>
+    <text class="zi3">{{user.sop1}}</text>
+    <text class="zi2" wx:if="{{user.exp}}">{{user.exp}}</text>
+    <text class="zi2" wx:else>0</text>
+    <text class="zi1" wx:if="{{user.t_num}}">{{user.t_num}}</text>
+    <text class="zi1" wx:else>0</text>
+  </view>
+  <view  class="{{key%2==0? 'nr1' : 'nr1 nr2'}}"  wx:for="{{teams}}" wx:for-index="key" wx:for-item="v">
+    <text class="zi1">{{key+1}}</text>
+     <view  wx:if="{{v.team!=null}}"  class="zi2">
+        <image src="../../images/hb.png" style="width:64rpx;height:48rpx;float:left" wx:if="{{v.allcount>=v.yq_num}}"> </image>
+        <text>{{v.team}}</text>
+     </view>
+     <view      wx:else  class="zi2">
+          <image src="../../images/hb.png" style="width:64rpx;height:48rpx;float:left" wx:if="{{v.allcount>=v.yq_num}}"> </image>
+          <text>{{v.sname}}</text>
+     </view>
+    <text class="zi3" wx:if="{{v.sop1!=null}}">{{v.sop1}}</text>
+    <text class="zi3" wx:else>无</text>
+     <text class="zi2">{{v.exps}}</text>
+    <text class="zi1">{{v.t_num}}</text>
+  </view>
+</view>
