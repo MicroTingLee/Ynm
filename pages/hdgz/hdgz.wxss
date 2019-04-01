@@ -1,0 +1,5 @@
+/* pages/hdgz/hdgz.wxss */
+.nr1{float:left;width:640rpx;margin:35rpx;height:740rpx;box-shadow:0px 0px 5rpx #ccc;padding:20rpx;overflow:scroll;font-size:25rpx;}
+.nr2{float:left;margin-left:35rpx;width:60rpx;height:60rpx;}
+.nr3{float:left;font-size:30rpx;line-height:60rpx;}
+.nr4{float:left;width:480rpx;height:90rpx;line-height:90rpx;font-size:30rpx;text-align:center;color:#fff;background:#af1ace;margin-left:135rpx;margin-top:40rpx;border-radius:25rpx;}

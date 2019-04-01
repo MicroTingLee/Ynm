@@ -1,0 +1,13 @@
+<!--pages/zc/zc.wxml-->
+<view class="nr1"></view>
+<view class="nr2">
+  <text class="zi1">团长注册</text>
+  <input class="zi2" type="text" placeholder='请输入团队名'  value = "{{tdm}}" bindinput="tdmpd" ></input>
+   <!-- <input class="zi2" type="text" placeholder='请输入昵称'  value = "{{nichen}}" bindinput="nichenpd" ></input> -->
+  <input class="zi2" type="number" placeholder='请输入手机号码'   value = "{{sjh}}" bindinput="sjhpd" maxlength='11'></input>
+  <input class="zi3" type="number" placeholder='请输入验证码'  value = "{{yzm}}" bindinput="yzmpd" ></input>
+  <button class="zi4" bindtap='hqyzm' wx:if="{{sja==0}}">获取验证码</button>
+  <button class="zi4" wx:else>({{sj}})</button>
+  <view class="zi5" bindtap='tj' wx:if="{{hh==1}}">提交</view>
+  <view class="zi5" style='background:#eee' wx:else>提交</view>
+</view>

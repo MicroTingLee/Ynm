@@ -1,0 +1,13 @@
+/* pages/grzx/grzx.wxss */
+.nr1{float:lefe;width:750rpx;background:#af1ace;height:200rpx;}
+.nr2{float:left;width:140rpx;height:140rpx;border:6rpx solid #fff;background:#fff;margin-left:299rpx;margin-top:-70rpx;border-radius:25vw;box-shadow:0rpx 5rpx 5rpx #ccc;}
+.nr2-1{float:left;width:750rpx;font-size:33rpx;line-height:33rpx;font-weight:bold;color:#838383;text-align:center;margin-top:33rpx;}
+.nr2-2{float:left;width:750rpx;font-size:28rpx;line-height:28rpx;color:#838383;text-align:center;margin-top:20rpx;}
+.nr3{float:left;width:650rpx;border-top:1rpx solid #f1f1f1;border-bottom:1rpx solid #f1f1f1;margin-top:70rpx;padding:10rpx 50rpx;box-shadow:0rpx 3rpx 5rpx #f1f1f1;}
+.nr3-1{float:left;width:130rpx;}
+.nr3-1 .img1{float:left;width:70rpx;height:70rpx;margin:20rpx 30rpx;}
+.nr3-1 .zi1{float:left;width:130rpx;text-align:center;margin-bottom:20rpx;font-size:25rpx;color:#838383;}
+.nr4{float:left;margin-top:20rpx;width:750rpx;box-shadow:0rpx 3rpx 5rpx #f1f1f1;border-top:1rpx solid #f1f1f1;border-bottom:1rpx solid #f1f1f1;}
+.nr4 .img1{float:left;width:60rpx;height:60rpx;margin:20rpx 30rpx;}
+.nr4 .img2{float:right;width:60rpx;height:60rpx;margin:20rpx 30rpx;}
+.nr4 .zi1{float:left;color:#838383;font-size:30rpx;line-height:60rpx;margin:20rpx 0rpx;}

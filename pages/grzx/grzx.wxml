@@ -1,0 +1,64 @@
+<!--pages/grzx/grzx.wxml-->
+<view class="nr1"></view>
+<image src="{{avatarUrl}}" class="nr2" wx:if="{{avatarUrl!=''}}"></image>
+<image src="../../images/img1.png" class="nr2" wx:else></image>
+<text class="nr2-1" wx:if="{{nickName!=''}}">{{item.team}}</text>
+<text class="nr2-1" wx:else>我很帅</text>
+<text class="nr2-2">战队：{{zdm}}</text>
+<view class="nr3">
+  <view bindtap="zdzj" class="nr3-1" >
+    <image src="../../images/zhandui.png" class="img1"></image>
+    <view class="zi1">我的战队</view>
+  </view>
+  <view class="nr3-1" bindtap='wdtj'>
+    <image src="../../images/tuijian.png" class="img1"></image>
+    <view class="zi1">我的推荐</view>
+  </view>
+  <view class="nr3-1" bindtap='wdzc'>
+    <image src="../../images/zichan.png" class="img1"></image>
+    <view class="zi1">我的资产</view>
+  </view>
+  <view class="nr3-1" bindtap='djhl'>
+    <image src="../../images/huli.png" class="img1"></image>
+    <view class="zi1">美丽日记</view>
+  </view>
+  <view class="nr3-1" bindtap='zcby'>
+    <image src="../../images/baoyang.png" class="img1"></image>
+    <view class="zi1">新品体验</view>
+  </view>
+</view>
+<view class="nr4" bindtap='wdjyz'>
+  <image src="../../images/jingyanzhi.png" class="img1"></image>
+  <text class="zi1">我的美颜值</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4"  bindtap='my_card'>
+  <image src="../../images/youhuiquan.png" class="img1"></image>
+  <text class="zi1">我的券包</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4" bindtap="zc" wx:if="{{xs==1}}">
+  <image src="../../images/xinxi-2.png"  class="img1"></image>
+  <text class="zi1">我的信息</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4"  bindtap="cwtz" wx:if="{{xs==0}}">
+  <image src="../../images/79.png" class="img1"></image>
+  <text class="zi1">成为团长</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4"  bindtap="wstz" wx:else>
+  <image src="../../images/79.png" class="img1"></image>
+  <text class="zi1">我是团长</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4" bindtap='kfzx' wx:if="{{service_tel}}">
+  <image src="../../images/kefu.png" class="img1"></image>
+  <text class="zi1">客服中心</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>
+<view class="nr4" wx:else>
+  <image src="../../images/kefu.png" class="img1"></image>
+  <text class="zi1">客服中心</text>
+  <image src="../../images/more.png" class="img2"></image>
+</view>

@@ -1,0 +1,63 @@
+<!--pages/shouyi/shouyi.wxml-->
+<view class="nr1">
+  <text class="nr1-1 {{xs==0? 'nr1-2':''}}" bindtap='qh' data-value="0">我的推荐</text>
+  <text class="nr1-1 {{xs==1? 'nr1-2':''}}" bindtap='qh' data-value="1">我的资产</text>
+  <text class="nr1-1 {{xs==2? 'nr1-2':''}}" bindtap='qh' data-value="2">我的美颜值</text>
+</view>
+<!-- 我的推荐-->
+<view class="nr6" wx:if="{{xs==0}}">
+<view class="nr5" wx:if="{{tj}}"  wx:for="{{tj}}" wx:key="key" wx:for-item="v">
+  <image src="{{v.portrait}}" class="img1"></image>
+  <text class="zi1">{{v.wechaname}}</text>
+  <text class="zi2">{{v.regtime}}</text>
+</view>
+</view>
+
+<!--我的资产-->
+<view class="nr2" wx:if="{{xs==1}}">
+ <text class="zi1">美颜值</text>
+ <text class="zi2">{{zc.my_exp}}</text>
+</view>
+<view class="nr3"  wx:if="{{xs==1}}">
+  <view class="nr4">
+   <text class="zi1">余额</text>
+  </view>
+  <view class="nr4">
+   <text class="zi1">兑换</text>
+  </view>
+  <view class="nr4">
+   <text class="zi1">收益</text>
+  </view>
+</view>
+
+
+
+<view  wx:if="{{xs==1}}" wx:for="{{zh}}"  wx:key="zh"  style="float:left;width:750rpx;height:60rpx;background:linear-gradient(to right, #996699, #ad19cd);">
+  <view>
+   <text  style="float:left;width:250rpx;text-align:center;font-size:28rpx;line-height:60rpx;color:#fff;">{{item.addtime}}</text>
+  </view>
+  <view style="float:left;width:250rpx;text-align:center;font-size:28rpx;line-height:60rpx;color:#fff;">
+   <text style="float:left;width:250rpx;text-align:center;font-size:28rpx;line-height:60rpx;color:#fff;">{{item.exp}}</text>
+  </view>
+  <view style="float:left;width:250rpx;text-align:center;font-size:28rpx;line-height:60rpx;color:#fff;">
+   <text>{{item.remark}}</text>
+  </view>
+</view>
+
+
+<!--我的经验值-->
+<view class="main"  wx:if="{{xs==2}}">
+  <view class="indexnr1" wx:for="{{jyz}}" wx:key="key1" wx:for-item="v1">
+    <view class="quyu2">
+      <p class="zi1">{{v1.name}}</p>
+      <p class="zi2">
+        <span class="span2">序号:{{v1.num}} </span>
+        <span class="span2">手机号 : {{v1.tel}}</span>
+        <br/>
+      </p>
+    </view>
+    <view class="quyu1">
+      <p class="zi1">{{v1.exp}}</p>
+    </view>
+  </view>
+</view>

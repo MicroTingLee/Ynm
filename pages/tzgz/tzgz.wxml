@@ -1,0 +1,8 @@
+<!--pages/tzgz/tzgz.wxml-->
+<view class="nr1">
+   <image src="../../images/gz.png" style="height:146rpx;width:100%"></image>
+</view>
+<view calss="nr2">
+   <text wx:if="{{rule}}" class="nr4">{{rule}}</text>
+</view>
+<button class="nr3" bindtap='cwtz'>我要成为团长</button>

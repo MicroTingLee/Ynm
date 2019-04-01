@@ -1,0 +1,23 @@
+<!--pages/djhl/djhl.wxml-->
+<view class='sum'  style='background-image: url({{imga}});'>
+  <!-- wxml -->
+  <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color="{{indicatorColor}}" 
+      indicator-active-color="{{indicatorActivecolor}}">
+    <block wx:for="{{pic}}" wx:for-index="key" wx:for-item="v">
+      <swiper-item>
+        <image src='{{v.img}}' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- wxml -->
+  <view class='content' wx:if="{{art.length>0}}">
+    <view class='content-son' >
+      <view class='content-son-s1'  wx:for="{{art}}" wx:for-index="key1" wx:for-item="v1">{{v1.intro}}</view>
+    </view>
+  </view>
+  <view class='content' wx:else>
+    <view class='content-son' >
+      <view class='content-son-s1' >暂无内容</view>
+    </view>
+  </view>
+</view>

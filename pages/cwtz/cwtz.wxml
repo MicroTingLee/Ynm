@@ -1,0 +1,8 @@
+<!--pages/cwtz/cwtz.wxml-->
+<view class="nr1"></view>
+<view class="nr2">
+ <image src="../../images/saoma.png" class="img1"></image>
+ <image src="{{hh}}" class="img2" wx:if="{{xs==0}}"></image>
+</view>
+<button class="nr3" bindtap='cwtz' wx:if="{{xs==1}}">我要成为团长</button>
+<view class="nr4" bindtap='tzgz' wx:if="{{xs==1}}">活动规则</view>
