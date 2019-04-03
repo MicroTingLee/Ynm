@@ -32,13 +32,16 @@
     <input type="text" class="zi1" placeholder='输入你要搜索的内容'></input>
   </view>
 </view>
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="nr2">
+<!-- 轮播 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="nr2">
   <block wx:for="{{imgs_shou}}" wx:for-index="key" wx:for-item="v" >
     <swiper-item>
       <image src="{{v.img}}" class="slide-image" mode="widthFix" style="width:750rpx;height:322rpx;" bindtap="tz" data-id="{{v.id}}" />
     </swiper-item>
   </block>
 </swiper>
+
+
 <view class="nr3">
  <image src="{{img_zuo.img}}" class="img1" wx:if="{{img_zuo}}" bindtap="tz1" data-id="{{img_zuo.id}}"></image>
  <image src="../../images/img2.png" class="img1" wx:else></image>
@@ -51,9 +54,9 @@
 <image src="../../images/img3.png" class="nr4" wx:else></image>
 
 <view class="golf">
-	<view class="intro" wx:if="{{img_zuo_x_n}}">
+    <view class="intro" wx:if="{{img_zuo_x_n}}">
   <template is="wxParse" style="width:750rpx" data="{{wxParseData:article.nodes}}" />
-	</view>
+    </view>
 </view>
 
 

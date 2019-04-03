@@ -18,7 +18,7 @@
     "pages/sy_xq/sy_xq"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "要你美",
     "navigationBarTextStyle":"black"

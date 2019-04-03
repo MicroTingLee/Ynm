@@ -2,7 +2,7 @@
 <view class="nr1"></view>
 <image src="{{avatarUrl}}" class="nr2" wx:if="{{avatarUrl!=''}}"></image>
 <image src="../../images/img1.png" class="nr2" wx:else></image>
-<text class="nr2-1" wx:if="{{nickName!=''}}">{{item.team}}</text>
+<text class="nr2-1" wx:if="{{nickName!=''}}">{{nickName}}</text>
 <text class="nr2-1" wx:else>我很帅</text>
 <text class="nr2-2">战队：{{zdm}}</text>
 <view class="nr3">
