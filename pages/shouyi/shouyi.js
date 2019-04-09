@@ -24,7 +24,7 @@ Page({
     if (this.data.xs == 0) {
       var that = this;
       // 我的推荐
-      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token,openid: wx.getStorageSync('openid'),openid_f:wx.setStorageSync('openid_f', option.openid_f) }, method = 'post';
+      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token,openid: wx.getStorageSync('openid'),openid_f:wx.setStorageSync('openid_f') }, method = 'post';
       app.ajaxData(url, data, method, function (res) {
         console.log(res)
         if (res.data.state == 10000) {
@@ -99,7 +99,7 @@ Page({
      var that = this;
     if (options.xs==0){
       // 我的推荐
-      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:wx.setStorageSync('openid_f', option.openid_f)}, method = 'post';
+      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token, openid: wx.getStorageSync('openid')}, method = 'post';
       app.ajaxData(url, data, method, function (res) {
         console.log(res.data.data)
         if (res.data.state == 10000) {

@@ -54,10 +54,11 @@ Page({
             data = {
                 token: app.globalData.token,
                 openid: wx.getStorageSync('openid'),
-                openid_f: wx.getStorageSync('openid_f')
+                openid_f:app.globalData.openid_f
             },
             method = 'post';
         app.ajaxData(url, data, method, function(res) {
+            console.log(res.data)
             if (res.data.state == 10000) {
                 if (res.data.data.status == 3) {
                     wx.showModal({
@@ -78,9 +79,11 @@ Page({
                     })
                     var url = app.globalData.comurl + "&m=Heroes&a=barcode",
                         data = {
-                            scene: 11,
-                            page: 'pages/index/index',
-                            openid: wx.getStorageSync('openid'),
+                        scene: wx.getStorageSync('openid'),
+                        page: 'pages/index/index',
+                            tel: app.globalData.tel,
+                            token: app.globalData.token,
+                            // openid: wx.getStorageSync('openid'),
                             openid_f:app.globalData.openid_f
                         },
                         method = 'post';
@@ -179,8 +182,8 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (option) {
- // option.openid_f = 'oP3770ae4ZXZTmTfByXboNRhcab4'
+onLoad: function (option) {
+ option.openid_f = 'oP3770ae4ZXZTmTfByXboNRhcab4'
 
         wx.showLoading({
             title: '加载中'

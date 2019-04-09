@@ -110,8 +110,6 @@ Page({
         var url = app.globalData.comurl + "&m=Heroes&a=user_xinxi", data = { token: app.globalData.token,openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f, tel: telephone, user_xinxi: e.detail.rawData}, method = 'post';
       }
 
-      // console.log(JSON.stringify(app.globalData.openid_f))
-      // console.log(8888888)
       app.ajaxData(url, data, method, function (res) {
         // console.log(JSON.stringify(res))
       })
