@@ -11,7 +11,9 @@ Page({
     xs1:1
   },
   onLoad: function (options) {
+
     if (options.openid_f != undefined){
+
       this.setData({
         fromUrl: options.fromUrl,
         openid_f: options.openid_f
@@ -23,7 +25,7 @@ Page({
       })
       app.globalData.openid_f = ''
     }
-    
+
     this.checkSession();
 
 
@@ -55,10 +57,12 @@ Page({
           var url = app.globalData.imgurl + "&m=Heroes&a=get_user",
             data = {
               token: app.globalData.token,
-              code: res.code
+              openid_f:app.globalData.openid_f,
+              openid: wx.getStorageSync('openid'),
+              code:res.code
             };
           app.ajaxData(url, data, 'POST', function (res) {
-            console.log(res)
+            console.log(res.code)
             if (res.data.state === 10000) {
               wx.setStorageSync('session_key', res.data.data.session_key);
               wx.setStorageSync('openid', res.data.data.openid);
@@ -82,6 +86,7 @@ Page({
   //获取用户基本信息
   getUserInfo: function (e) {
     console.log(JSON.stringify(e))
+
     if (e.errMsg == "getUserInfo:fail auth deny") {
       return false;
     }
@@ -100,14 +105,15 @@ Page({
         xs: 2
       })
       if (wx.getStorageSync('openid_f')!=''){
-        var url = app.globalData.comurl + "&m=Heroes&a=user_xinxi", data = { token: app.globalData.token, tel: telephone, user_xinxi: e.detail.rawData }, method = 'post';
+        var url = app.globalData.comurl + "&m=Heroes&a=user_xinxi", data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f,tel: telephone, user_xinxi: e.detail.rawData }, method = 'post';
       }else{
-        var url = app.globalData.comurl + "&m=Heroes&a=user_xinxi", data = { token: app.globalData.token, tel: telephone, user_xinxi: e.detail.rawData }, method = 'post';
+        var url = app.globalData.comurl + "&m=Heroes&a=user_xinxi", data = { token: app.globalData.token,openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f, tel: telephone, user_xinxi: e.detail.rawData}, method = 'post';
       }
 
-      console.log(JSON.stringify(app.globalData.openid_f))
+      // console.log(JSON.stringify(app.globalData.openid_f))
+      // console.log(8888888)
       app.ajaxData(url, data, method, function (res) {
-        console.log(JSON.stringify(res))
+        // console.log(JSON.stringify(res))
       })
       wx.setStorageSync('userInfo', (e.detail.rawData));
       app.globalData.userInfo = JSON.parse(e.detail.rawData);
@@ -123,7 +129,7 @@ Page({
             })
           }
     }
-    
+
   },
   // //存储formId并提交内容
   formSubmit: function (e) {
@@ -146,13 +152,13 @@ Page({
           sessionKey: wx.getStorageSync('session_key'),
           appid: 'wxfbde4f8ff6b8969c'
         };
-      console.log(url)
-        console.log(data)
+      // console.log(url)
+        // console.log(data)
       wx.showLoading({
         title: '',
       })
       app.ajaxData(url, data, 'POST', function (res) {
-        console.log(res);
+        // console.log(res);
         wx.hideLoading();
         if (res.data.data.purePhoneNumber) {
           that.setData({

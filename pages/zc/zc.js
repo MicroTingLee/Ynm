@@ -52,7 +52,7 @@ Page({
         icon: 'success',
         duration: 1500
       })
-      return  
+      return
     }
     if (this.data.sjh.length != 11) {
       wx.showToast({
@@ -82,7 +82,7 @@ Page({
         that.setData({
           yzm1:res.data.data
         })
-       
+
       } else {
         wx.showToast({
           title: res.data.message,
@@ -122,7 +122,7 @@ Page({
      wx.showToast({
        title: '请填写团队名',
      })
-     return 
+     return
    }
     if (this.data.nichen == '') {
       wx.showToast({
@@ -152,7 +152,7 @@ Page({
       })
       return
     }
-    
+
     var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(19[0-9]{1})|(14[0-9]{1}))+\d{8})$/;
     if (!myreg.test(this.data.sjh)) {
       wx.showToast({
@@ -166,7 +166,7 @@ Page({
       wx.showToast({
         title: '请获取验证码',
       })
-      return 
+      return
     }
     if (this.data.yzm1 == '') {
       wx.showToast({
@@ -183,13 +183,16 @@ Page({
     this.setData({
       hh:0
     })
+    // 提交注册
     var that = this, url = app.globalData.comurl + "&m=Heroes&a=personal", data = { token: app.globalData.token, team: that.data.tdm,  tel: that.data.sjh, openid: wx.getStorageSync('openid') }, data1 = { token: app.globalData.token, openid: wx.getStorageSync('openid'), team: that.data.tdm, sname: that.data.nichen, tel: that.data.sjh }, method = 'post';
-    console.log(JSON.stringify(url))
-    console.log(JSON.stringify(data1))
+    // console.log(JSON.stringify(url))
+    // console.log(JSON.stringify(data1))
+    console.log(JSON.stringify(data))
     app.ajaxData(url, data, method, function (res) {
       console.log(res)
       if (res.data.state == 10000) {
         if(res.data.data.status=='1'){
+          console.log(res.data.data.status);
           if (res.data.data.status_t=='1'){
             wx.showToast({
               title: '成为团长',
@@ -209,19 +212,33 @@ Page({
               })
           },1000)
         }
+        //注册是否成为团长提示
+        else if(res.data.data.status=='2' ){
+          console.log(res.data.data)
+           wx.showLoading({
+          title: res.data.data.msg,
+        })
+
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 2000)
+          // wx.showToast({
+          //   title: res.data.data.msg,
+          // })
+       }
       } else {
         wx.showToast({
           title: res.data.message,
         })
       }
     })
-    
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
     wx.setNavigationBarTitle({
       title:'成为团长'
     })
@@ -229,8 +246,8 @@ Page({
      sjh: app.globalData.tel,
    })
     console.log(JSON.stringify(app.globalData.tel))
-  
- 
+
+
   },
 
   /**

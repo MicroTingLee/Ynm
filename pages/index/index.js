@@ -26,8 +26,9 @@ Page({
         img_zuo_x: {},
         xs: 0,
         hh: '',
-        hh1: 1
+        hh1: 1,
     },
+
     //领取优惠券
     lq: function(e) {
         var url1 = app.globalData.comurl + "&m=Asset&a=ling",
@@ -52,7 +53,8 @@ Page({
             url = app.globalData.comurl + "&m=Heroes&a=is_shenhe",
             data = {
                 token: app.globalData.token,
-                openid: wx.getStorageSync('openid')
+                openid: wx.getStorageSync('openid'),
+                openid_f: wx.getStorageSync('openid_f')
             },
             method = 'post';
         app.ajaxData(url, data, method, function(res) {
@@ -78,7 +80,8 @@ Page({
                         data = {
                             scene: 11,
                             page: 'pages/index/index',
-                            openid: wx.getStorageSync('openid')
+                            openid: wx.getStorageSync('openid'),
+                            openid_f:app.globalData.openid_f
                         },
                         method = 'post';
                     app.ajaxData(url, data, method, function(res) {
@@ -129,10 +132,7 @@ Page({
                     title: res.data.message,
                 })
             }
-
-
         })
-
     },
     //关闭二维码的页面
     gba: function() {
@@ -180,22 +180,17 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (option) {
-
-      console.log(111111)
-        console.log(option)
-        option.openid_f = 'oP3770ae4ZXZTmTfByXboNRhcab4'
+ // option.openid_f = 'oP3770ae4ZXZTmTfByXboNRhcab4'
 
         wx.showLoading({
             title: '加载中'
         })
         var that = this,
             url = app.globalData.comurl + "&m=Heroes&a=is_what",
-            data = { openid: wx.getStorageSync('openid') },
+            data = { token: app.globalData.token, tel: app.globalData.tel,openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f},
             method = 'post';
 
         app.ajaxData(url, data, method, function(res) {
-          console.log(res.data)
-          // console.log(option.scene)
             if (res.data == 1) {
                 wx.setStorageSync('openid', 'oiT4K48EUvPHX4mWGzlrmw5Lgcjo');
                 app.globalData.tel = '18362945754';
@@ -203,7 +198,6 @@ Page({
 
             } else {
 
-                  console.log(555555);
                 if (option.scene) {
                     const scene = decodeURIComponent(option.scene);
                     if (scene != null && scene != 'undefined') {
@@ -222,13 +216,13 @@ Page({
                     })
 
                     var url1 = app.globalData.comurl + "&m=Heroes&a=user_xinxi",
-                        data11 = { token: app.globalData.token, tel: app.globalData.tel, user_xinxi: JSON.stringify(app.globalData.userInfo), openid: wx.getStorageSync('openid') },
+                        data11 = { token: app.globalData.token, tel: app.globalData.tel, user_xinxi: JSON.stringify(app.globalData.userInfo), openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f},
                         method = 'post';
                     app.ajaxData(url1, data11, method, function(res) {
 
                     })
                     var url = app.globalData.comurl + "&m=Heroes&a=index",
-                        data = { token: app.globalData.token, openid: wx.getStorageSync('openid') },
+                        data = { token: app.globalData.token, openid: wx.getStorageSync('openid'), openid_f:app.globalData.openid_f},
                         method = 'post';
                     app.ajaxData(url, data, method, function(res) {
                         if (res.data.state == '10000') {
@@ -289,7 +283,7 @@ Page({
                         title: '加载中',
                     })
                     var url = app.globalData.comurl + "&m=Heroes&a=index",
-                        data = { token: app.globalData.token, openid: wx.getStorageSync('openid') },
+                        data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f},
                         method = 'post';
                     app.ajaxData(url, data, method, function(res) {
                       // console.log(res.data.data)
@@ -358,7 +352,7 @@ Page({
      */
     onShow: function () {
          var url2 = app.globalData.comurl + "&m=Heroes&a=team_name",
-            data2 = { token: app.globalData.token, openid: wx.getStorageSync('openid') },
+            data2 = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f},
             method = 'post';
         app.ajaxData(url2, data2, method, function(res) {
 
@@ -375,7 +369,7 @@ Page({
 
         //优惠券判断
         var url1 = app.globalData.comurl + "&m=Asset&a=first",
-            data11 = { token: app.globalData.token, openid: wx.getStorageSync('openid') },
+            data11 = { token: app.globalData.token, openid: wx.getStorageSync('openid')},
             method = 'post',
             that = this;
         app.ajaxData(url1, data11, method, function(res) {
@@ -419,6 +413,13 @@ Page({
      */
     onPullDownRefresh: function () {
 
+        wx.showLoading({
+          title: '加载中',
+        })
+
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 2000)
     },
 
     /**
@@ -431,48 +432,52 @@ Page({
     /**
      * 用户点击右上角转发
      */
-    onShareAppMessage: function (res) {
-        if (app.globalData.userInfo == '' || app.globalData.userInfo == 'null' || app.globalData.userInfo == null) {
-            wx.navigateTo({
-                url: '../welcome/welcome?fromUrl=index'
-            })
+   onShareAppMessage: function (res) {
+    if (app.globalData.userInfo == '' || app.globalData.userInfo == 'null' || app.globalData.userInfo == null) {
+      wx.navigateTo({
+        url: '../welcome/welcome?fromUrl=index'
+      })
+    }
+    if (app.globalData.tz==1){
+      if (res.from === 'button') {
+        // console.log(res.target)
+      }
+      else {
+        // console.log(res.target)
+      }
+      return {
+        title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
+        path: '/pages/index/index?openid_f=' + wx.getStorageSync('openid'),
+        success: (res) => {
+          console.log("转发成功", res);
+        },
+        fail: (res) => {
+          console.log("转发失败", res);
         }
-        if (app.globalData.tz == 1) {
-            if (res.from === 'button') {
-
-            } else {
-
-            }
-            return {
-                title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
-                path: '/pages/index/index?openid_f=' + wx.getStorageSync('openid'),
-                success: (res) => {
-                    console.log("转发成功", res);
-                    console.log(wx.getStorageSync('openid'))
-                },
-                fail: (res) => {
-                    console.log("转发失败", res);
-                }
-            }
-        } else {
-            if (res.from === 'button') {
-                console.log("来自页面内转发按钮");
-                console.log(res.target);
-            } else {
-                console.log("来自右上角转发菜单")
-            }
-            return {
-                title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
-                path: '/pages/index/index',
-                success: (res) => {
-                    console.log("转发成功", res);
-                },
-                fail: (res) => {
-                    console.log("转发失败", res);
-                }
-            }
+      }
+    }else{
+      if (res.from === 'button') {
+        console.log("来自页面内转发按钮");
+        console.log(res.target);
+      }
+      else {
+        console.log("来自右上角转发菜单")
+      }
+      return {
+        title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
+        path: '/pages/index/index',
+        success: (res) => {
+          console.log("转发成功", res);
+        },
+        fail: (res) => {
+          console.log("转发失败", res);
         }
-    },
+      }
+    }
+
+
+  },
+
 
     /**
      * 页面滚动触发事件的处理函数

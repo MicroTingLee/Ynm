@@ -4,6 +4,8 @@
 .nr2{background:#fff}
 .nr2-1{background:#fff;line-height:100rpx;border-top-left-radius: 10rpx;border-top-right-radius: 10rpx;}
 .nr1 .zi1{float:left;width:110rpx;text-align:center;font-size:28rpx;line-height:68rpx;}
-.nr1 .zi2{float:left;width:190rpx;text-align:center;font-size:28rpx;line-height:68rpx;}
+.nr1 .zi2{float:left;width:190rpx;text-align:center;font-size:28rpx;line-height:68rpx; text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;}
 .nr1 .zi3{font-size:33rpx;line-height:100rpx;}
 .nr4{float:lefe;width:750rpx;background:#af1ace;height:200rpx;}

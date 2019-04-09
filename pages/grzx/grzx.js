@@ -96,11 +96,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '个人中心'
     })
-    
+
     var that = this, url = app.globalData.comurl + "&m=Heroes&a=team_name", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
     app.ajaxData(url, data, method, function (res) {
       console.log(JSON.stringify(res))
-   
+
       if(res.data.state==10000){
         if (res.data.data.status==1){
           that.setData({
@@ -120,7 +120,7 @@ Page({
         })
       }
     })
-   
+
   },
 
   /**
@@ -134,7 +134,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this, url = app.globalData.comurl + "&m=Heroes&a=kefu", data = { token: app.globalData.token }, method = 'post';
+    var that = this, url = app.globalData.comurl + "&m=Heroes&a=kefu", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
 
     app.ajaxData(url, data, method, function (res) {
       console.log(JSON.stringify(res))

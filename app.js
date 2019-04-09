@@ -1,12 +1,13 @@
 //app.js
 App({
     onLaunch: function(options) {
+        // console.log(options)
         var that = this,
             url = that.globalData.comurl + "&m=Heroes&a=is_what",
             data = {},
             method = 'post';
         that.ajaxData(url, data, method, function(res) {
-            console.log(JSON.stringify(res))
+            // console.log(JSON.stringify(res))
             if (res.data == 1) {
                 wx.setStorageSync('openid', 'oiT4K48EUvPHX4mWGzlrmw5Lgcjo');
                 that.globalData.tel = '18362945754';
@@ -14,6 +15,8 @@ App({
             } else {
                 var userInfo = wx.getStorageSync('userInfo');
                 var tel = wx.getStorageSync('tel');
+                var openid_f = wx.getStorageSync('openid_f');
+                // console.log(openid_f)
                 if (userInfo != "") {
                     userInfo = JSON.parse(userInfo);
                     that.globalData.userInfo = userInfo;
@@ -23,10 +26,10 @@ App({
                 }
                 if (wx.getStorageSync('openid') != '') {
                     var url = that.globalData.comurl + "&m=Heroes&a=team_name",
-                        data = { token: that.globalData.token, openid: wx.getStorageSync('openid') },
+                        data = { token: that.globalData.token, openid: wx.getStorageSync('openid'),openid_f:wx.getStorageSync('openid_f') },
                         method = 'post';
-                    var data1 = { token: that.globalData.token, openid: wx.getStorageSync('openid') }
-                    console.log(JSON.stringify(url))
+                    var data1 = { token: that.globalData.token, openid: wx.getStorageSync('openid'),openid_f:wx.getStorageSync('openid_f') }
+                    // console.log(JSON.stringify(url))
                     // console.log(JSON.stringify(data1))
                     that.ajaxData(url, data, method, function(res) {
                         // console.log(JSON.stringify(res))
@@ -59,9 +62,9 @@ App({
             },
             success: function(res) {
                 //console.log(res);
-                setTimeout(function () {
-                  wx.hideLoading()
-                }, 500)
+                setTimeout(function() {
+                    wx.hideLoading()
+                }, 2000)
                 callBack(res);
             },
             fail: function(res) {
@@ -73,7 +76,7 @@ App({
             complete: function(res) {
                 setTimeout(function() {
                     wx.hideLoading()
-                }, 200)
+                }, 2000)
             }
         })
     },
@@ -96,7 +99,7 @@ App({
 
     //             setTimeout(function() {
     //                 wx.hideLoading()
-    //             }, 2000)
+    //             }, 1000)
     //         }
     //     })
     // },
@@ -159,7 +162,7 @@ App({
         fromIds: [],
         tel: '',
         tz: 0,
-        openid_f: '',
+        openid_f: 'oP3770ae4ZXZTmTfByXboNRhcab4',
         service_tel: '',
         imgurl: 'https://wt.lingdie.com/index.php?g=User', //接口域名
         comurl: 'https://wt.lingdie.com/index.php?g=User', //业务数据请求地址

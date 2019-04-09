@@ -20,13 +20,13 @@
 </view>
 <view class="nr3"  wx:if="{{xs==1}}">
   <view class="nr4">
-   <text class="zi1">余额</text>
+   <text class="zi1">日期</text>
   </view>
   <view class="nr4">
-   <text class="zi1">兑换</text>
+   <text class="zi1">使用</text>
   </view>
   <view class="nr4">
-   <text class="zi1">收益</text>
+   <text class="zi1">说明</text>
   </view>
 </view>
 

@@ -15,14 +15,16 @@ Page({
   qh:function(e){
     this.setData({
       xs: e.target.dataset.value
+
     })
+
     wx.showLoading({
       title: '加载中',
     })
     if (this.data.xs == 0) {
       var that = this;
       // 我的推荐
-      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token,openid: wx.getStorageSync('openid') }, method = 'post';
+      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token,openid: wx.getStorageSync('openid'),openid_f:wx.setStorageSync('openid_f', option.openid_f) }, method = 'post';
       app.ajaxData(url, data, method, function (res) {
         console.log(res)
         if (res.data.state == 10000) {
@@ -31,6 +33,7 @@ Page({
               tj: res.data.data
             })
           }
+
         } else {
           wx.showToast({
             title: res.data.messgae,
@@ -43,6 +46,7 @@ Page({
       var url = app.globalData.comurl + "&m=Heroes&a=my_use", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
       app.ajaxData(url, data, method, function (res) {
         console.log(res.data.data.users)
+
         if (res.data.state == 10000) {
           if (res.data.data != null) {
             that.setData({
@@ -50,6 +54,9 @@ Page({
               zh: res.data.data.users
             })
           }
+           if(res.data.data.users = null){
+                res.data.data.users =' '
+            }
         } else {
           wx.showToast({
             title: res.data.messgae,
@@ -92,7 +99,7 @@ Page({
      var that = this;
     if (options.xs==0){
       // 我的推荐
-      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';     
+      var url = app.globalData.comurl + "&m=Asset&a=tuijian", data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:wx.setStorageSync('openid_f', option.openid_f)}, method = 'post';
       app.ajaxData(url, data, method, function (res) {
         console.log(res.data.data)
         if (res.data.state == 10000) {
@@ -217,7 +224,7 @@ Page({
       }
       return {
         title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
-        path: '/pages/index/index?openid_f=' ,
+        path: '/pages/index/index?openid_f=' + wx.getStorageSync('openid'),
         success: (res) => {
           console.log("转发成功", res);
         },
@@ -235,7 +242,7 @@ Page({
       }
       return {
         title: '我正在参加欧菲百团大战活动，快来组团走上人生巅峰！！！',
-        path: '/pages/index/index',
+        path: '/pages/index/index?openid_f=' + wx.getStorageSync('openid'),
         success: (res) => {
           console.log("转发成功", res);
         },

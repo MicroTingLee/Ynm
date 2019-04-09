@@ -28,7 +28,7 @@ Page({
       title: '加载中',
     })
     //我的团队
-    var that = this, url = app.globalData.comurl + "&m=Heroes&a=my_teams", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
+    var that = this, url = app.globalData.comurl + "&m=Heroes&a=my_teams", data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f }, method = 'post';
     app.ajaxData(url, data, method, function (res) {
       console.log(JSON.stringify(res))
       if (res.data.state == '10000') {
@@ -67,7 +67,7 @@ Page({
       title: '加载中',
     })
     //战队战绩
-    var that = this, url = app.globalData.comurl + "&m=Heroes&a=zhandui", data = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
+    var that = this, url = app.globalData.comurl + "&m=Heroes&a=zhandui", data = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f }, method = 'post';
     app.ajaxData(url, data, method, function (res) {
       console.log(JSON.stringify(res))
       if (res.data.state == '10000') {
@@ -87,7 +87,7 @@ Page({
 
 
 
-    var url2 = app.globalData.comurl + "&m=Heroes&a=team_name", data2 = { token: app.globalData.token, openid: wx.getStorageSync('openid') }, method = 'post';
+    var url2 = app.globalData.comurl + "&m=Heroes&a=team_name", data2 = { token: app.globalData.token, openid: wx.getStorageSync('openid'),openid_f:app.globalData.openid_f }, method = 'post';
     app.ajaxData(url2, data2, method, function (res) {
       console.log(JSON.stringify(res))
       if (res.data.state == 10000) {
